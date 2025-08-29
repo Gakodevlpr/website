@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import Back from '../assets/back.svg?react'
+import Back from '../../assets/back.svg?react'
 import { useState } from 'react'
 
 export default function Header({ classNameProp }: { classNameProp: string }) {
