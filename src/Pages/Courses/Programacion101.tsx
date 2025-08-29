@@ -1,15 +1,9 @@
+import Titles from "../../components/General/Titles";
+
 export default function Programacion101() {
     return (
         <section className="max-w-4xl mx-auto px-4">
-            <h1
-                className="text-3xl md:text-4xl font-bold mb-6 text-center"
-                style={{ fontFamily: "var(--font-Sour)" }}
-            >
-                Básicos de Programación
-            </h1>
-            <p className="mb-6 text-lg text-gray-200">
-                ¡Bienvenido/a! Aquí aprenderás los conceptos fundamentales que necesitas para empezar a programar, sin importar el lenguaje que elijas en el futuro. Estos son los pilares que te ayudarán a entender cualquier tecnología.
-            </p>
+            <Titles title="Básicos de programación" text="¡Bienvenido/a! Aquí aprenderás los conceptos fundamentales que necesitas para empezar a programar, sin importar el lenguaje que elijas en el futuro. Estos son los pilares que te ayudarán a entender cualquier tecnología."/>
             <div className="space-y-8">
                 <section>
                     <h2

@@ -1,6 +1,6 @@
 import pythonImage from '../../assets/python.png';
 import promptin from '../../assets/promptin.svg'
-import ExportCourse from './ExportCourse';
+import ExportCourse from '../components/Courses/ExportCourse';
 import { useOutlet } from 'react-router';
 import { useNavigate } from 'react-router';
 

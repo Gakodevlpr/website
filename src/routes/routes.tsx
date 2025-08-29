@@ -5,9 +5,9 @@ import Layout from '../Pages/Layout';
 import Homepage from "../Homepage";
 import Bienvenida from '../Pages/Bienvenida';
 import About from '../Pages/About';
-import Courses from '../Pages/Courses/Courses';
-import Python from "../Pages/Python";
-import Programacion101 from "../Pages/Programacion101";
+import Courses from '../Pages/Courses';
+import Python from "../Pages/Courses/Python";
+import Programacion101 from "../Pages/Courses/Programacion101";
 
 export const router = createBrowserRouter([
     {

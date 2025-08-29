@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Logo from './assets/logo.svg?react';
-import Menu from './components/Menu';
+import Menu from './components/General/Menu';
 
 export default function Homepage() {
   return (

@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../components/General/Header";
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function Layout() {

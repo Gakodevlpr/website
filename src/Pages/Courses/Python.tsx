@@ -1,4 +1,4 @@
-import Titles from "../components/Titles"
+import Titles from "../../components/General/Titles"
 
 export default function Python() {
     return(
