@@ -1,7 +1,7 @@
 import Titles from "../../components/General/Titles"
 import CourseSection from "../../components/General/CourseSection";
-import EduPlayGround from "../../components/Courses/EduPlayGround";
-import SimplePlaygroundExample from "../../components/Courses/SimplePlaygroundExample";
+// import EduPlayGround from "../../components/Courses/EduPlayGround";
+// import SimplePlaygroundExample from "../../components/Courses/SimplePlaygroundExample";
 
 export default function Python() {
     return (
@@ -58,7 +58,7 @@ export default function Python() {
                                 </div>
                             </CourseSection>
                         </div>
-                        <SimplePlaygroundExample/>
+                        {/* <SimplePlaygroundExample/> */}
                     </div>
                 </div>
             </div>
