@@ -5,9 +5,11 @@ interface CourseProps {
     titleCourse: string;
     imagesrc: string;
     linkTo?: string; // Make linkTo optional
+    infoImg?: string;
+    className?: string;
 }
 
-export default function ExportCourse({ titleCourse, imagesrc, linkTo = "/" }: CourseProps) {
+export default function ExportCourse({ titleCourse, imagesrc, linkTo = "/", infoImg, className }: CourseProps) {
     const navigate = useNavigate();
 
     const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
@@ -21,9 +23,9 @@ export default function ExportCourse({ titleCourse, imagesrc, linkTo = "/" }: Co
     };
 
     return (
-        <Link to={linkTo} onClick={handleClick} className='flex flex-col items-center p-6 border border-white/20 rounded-2xl bg-white/5'>
+        <Link to={linkTo} onClick={handleClick} className={`flex flex-col items-center p-6 border border-white/20 rounded-2xl bg-white/5 ${className}`}>
             <h3 className="font-Sour text-3xl mb-4 text-center">{titleCourse}</h3>
-            <img src={imagesrc} className='w-32 h-32 object-contain' alt={titleCourse} />
+            <img src={imagesrc} className={infoImg ? infoImg : 'w-32 h-32 object-contain'} alt={titleCourse} />
         </Link>
     );
 };

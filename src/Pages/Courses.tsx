@@ -1,5 +1,6 @@
 import pythonImage from '../assets/python.png';
-import promptin from '../assets/promptin.svg'
+import promptin from '../assets/promptin.svg';
+import htmlImage from '../assets/html_logo_course.png';
 import ExportCourse from '../components/Courses/ExportCourse';
 import { useOutlet } from 'react-router';
 import { useNavigate } from 'react-router';
@@ -15,6 +16,7 @@ export default function Courses() {
                 <div className="flex flex-wrap gap-10 justify-center">
                     <ExportCourse titleCourse="Python" imagesrc={pythonImage} linkTo="python" />
                     <ExportCourse titleCourse="Programación 101" imagesrc={promptin} linkTo="basicprograming" />
+                    <ExportCourse titleCourse="Html" imagesrc={htmlImage} linkTo="html"/>
                 </div>
             )}
 

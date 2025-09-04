@@ -1,20 +1,36 @@
 import { Link, useLocation } from 'react-router-dom';
 
-export default function Menu() {
+/**
+ * Menu component renders a navigation menu.
+ * 
+ * Usage example:
+ * 
+ * <Menu
+ *   navItems={[
+ *     { to: '/bienvenida', label: 'Bienvenida' },
+ *     { to: '/about', label: 'About' },
+ *     { to: '/cursos', label: 'Cursos' },
+ *   ]}
+ * />
+ */
+interface NavItem {
+    to: string;
+    label: string;
+}
+
+interface MenuProps {
+    navItems: NavItem[];
+}
+
+export default function Menu({ navItems }: MenuProps) {
     const location = useLocation();
     const currentPath = location.pathname;
-
-    const navItems = [
-        { to: '/bienvenida', label: 'Bienvenida' },
-        { to: '/about', label: 'About' },
-        { to: '/cursos', label: 'Cursos' },
-    ] as const;
 
     return (
         <nav className="mx-auto w-3/4 md:w-2/5 max-w-3xl px-3">
             <div className="rounded-2xl p-[1px] ">
                 <div className="flex items-center justify-between gap-1 rounded-2xl px-2 py-2">
-                    <ul className="flex-col md:flex-row no-scrollbar flex w-full items-center justify-center gap-1 overflow-x-auto">
+                    <ul className="flex-col md:flex-row no-scrollbar flex w-full items-center justify-center gap-1 overflow-x-visible">
                         {navItems.map((item) => {
                             const isActive = currentPath === item.to || currentPath.startsWith(item.to + '/');
 

@@ -1,9 +1,9 @@
-const Titles = ({title, text}:{title:string, text:string}) => {
+const Titles = ({title, text, className}:{title:string, text:string, className?:string}) => {
     return (
-        <div className="flex flex-col md:flex-row items-center gap-4 max-w-4/5">
+        <div className={`flex flex-col md:flex-row items-center gap-4 mb-10 md:max-w-4/5 max-w-full  ${className ?? ""}`}>
             <h2 id='Title' className="text-center font-bold text-2xl">{title}</h2>
-            <span className="hidden md:block h-16 border-r border-gray-300"></span>
-            <span className="block md:hidden w-full border-b border-gray-300"></span>
+            <span className="hidden md:block h-16 border-r border-white"></span>
+            <span className="block md:hidden w-full border-b border-white"></span>
             <div>
                 {/* 
                     "dangerouslySetInnerHTML" in React allows you to set HTML content directly from a string.

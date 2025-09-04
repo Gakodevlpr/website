@@ -14,7 +14,13 @@ export default function Homepage() {
       </Helmet>
       <div className='flex flex-col items-center justify-center h-screen'>
         <Logo className='w-[300px] md:w-[400px]' />
-        <Menu />
+        <Menu
+          navItems={[
+            { to: '/bienvenida', label: 'Bienvenida' },
+            { to: '/about', label: 'About' },
+            { to: '/cursos', label: 'Cursos' },
+          ]}
+        />
       </div>
     </>
   )

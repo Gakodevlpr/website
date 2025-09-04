@@ -8,6 +8,7 @@ import About from '../Pages/About';
 import Courses from '../Pages/Courses';
 import Python from "../Pages/Courses/Python";
 import Programacion101 from "../Pages/Courses/Programacion101";
+import Html from "../Pages/Courses/Html";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
               path:"basicprograming",
               element:<Programacion101/>,
+            },
+            {
+              path:"html",
+              element:<Html/>,
             },
           ],
         },

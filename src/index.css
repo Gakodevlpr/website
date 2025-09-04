@@ -8,6 +8,11 @@
   --font-Montserrat: "Montserrat", sans-serif;
 }
 
+/* Prevent layout shift when pages have different scroll heights */
+body {
+  overflow-y: scroll;
+}
+
 :root {
   font-family: "Sour Gummy", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

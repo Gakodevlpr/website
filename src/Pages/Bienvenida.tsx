@@ -9,12 +9,11 @@ export default function Home(){
                 <meta name="keywords" content="Programación, Desarrollo, Web, Gakodevlpr" />
                 <meta name="author" content="Gakodevlpr" />
             </Helmet>
-            <main id="welcome" className="relative flex flex-col justify-center items-center px-4 py-16">
+            <main id="welcome" className="relative flex flex-col items-center px-4 py-16">
                 <section className="text-center space-y-4">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-widest">
                         Bienvenide a mi espacio digital
                     </h1>
-                    
                     <p className="text-xl md:text-2xl text-white leading-relaxed">
                         ¡Hola! Soy Gakodevlpr y este es mi viaje de aprendizaje en programación.<br/>
                         Aquí voy documentando poco a poco mi aprendizaje en programación.
@@ -27,6 +26,12 @@ export default function Home(){
                             className="px-8 py-3 bg-white text-black rounded-lg transition-colors"
                         >
                             Ver proyectos
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/gabriel-cerezuela-mazar%C3%ADo-196759223/" 
+                            className="px-8 py-3 bg-white text-black rounded-lg transition-colors"
+                        >
+                            LinkedIn
                         </a>
                     </div>
                 </section>
