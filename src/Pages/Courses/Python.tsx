@@ -58,7 +58,6 @@ export default function Python() {
                                 </div>
                             </CourseSection>
                         </div>
-                        {/* <SimplePlaygroundExample/> */}
                     </div>
                 </div>
             </div>
