@@ -12,7 +12,7 @@ interface CourseEndProps {
  */
 export default function CourseEnd({ 
   courseName = "este curso",  // Valor por defecto si no se proporciona
-  message = "¡Felicitaciones! Has completado todas las secciones disponibles de este curso.",
+  message = `¡Felicitaciones! Has completado todas las secciones disponibles de ${courseName}.`,
   additionalMessage = "Pronto agregaremos más contenido. ¡Mantente atento!"
 }: CourseEndProps) {
   return (
