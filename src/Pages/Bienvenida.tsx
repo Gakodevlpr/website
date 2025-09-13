@@ -23,12 +23,14 @@ export default function Home(){
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                         <a
                             href="https://github.com/Gakodevlpr" 
+                            target="_blank"
                             className="px-8 py-3 bg-white text-black rounded-lg transition-colors"
                         >
                             Ver proyectos
                         </a>
                         <a
                             href="https://www.linkedin.com/in/gabriel-cerezuela-mazar%C3%ADo-196759223/" 
+                            target="_blank"
                             className="px-8 py-3 bg-white text-black rounded-lg transition-colors"
                         >
                             LinkedIn

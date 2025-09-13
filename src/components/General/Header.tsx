@@ -9,7 +9,7 @@ type NavItem = {
 
 const NAV_ITEMS: readonly NavItem[] = [
     { to: '/bienvenida', label: 'Bienvenida' },
-    { to: '/about', label: 'About' },
+    { to: '/recursos', label: 'Recursos' },
     { to: '/cursos', label: 'Cursos' },
 ] as const;
 

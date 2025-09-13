@@ -1,18 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
 
-/**
- * Menu component renders a navigation menu.
- * 
- * Usage example:
- * 
- * <Menu
- *   navItems={[
- *     { to: '/bienvenida', label: 'Bienvenida' },
- *     { to: '/about', label: 'About' },
- *     { to: '/cursos', label: 'Cursos' },
- *   ]}
- * />
- */
 interface NavItem {
     to: string;
     label: string;

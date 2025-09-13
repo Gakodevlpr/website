@@ -1,6 +1,7 @@
-const Titles = ({title, text, className}:{title:string, text:string, className?:string}) => {
+const Titles = ({ title, text, className }: { title: string, text: string, className?: string }) => {
+
     return (
-        <div className={`flex flex-col md:flex-row items-center gap-4 mb-10 md:max-w-4/5 max-w-full  ${className ?? ""}`}>
+        <div className={`flex flex-col md:flex-row items-center justify-center gap-4 mb-10 md:max-w-4/5 max-w-full  ${className ?? ""} ${title.includes("Sección") ? "justify-center" : ""}`}>
             <h2 id='Title' className="text-center font-bold text-2xl">{title}</h2>
             <span className="hidden md:block h-16 border-r border-white"></span>
             <span className="block md:hidden w-full border-b border-white"></span>
@@ -11,9 +12,9 @@ const Titles = ({title, text, className}:{title:string, text:string, className?:
                     In this case, if the only tag included in 'text' is <br/>, and the rest is plain text,
                     it is generally safe, as <br/> is not a dangerous tag and does not allow script execution.
                 */}
-                <p className="text-justify" dangerouslySetInnerHTML={{ __html: text }}></p>
+                <p className="text-center" dangerouslySetInnerHTML={{ __html: text }}></p>
                 <br />
-                <p className="text-center md:text-justify font-bold text-lg">¡Espero que te sean de ayuda!</p>
+                <p className="text-center font-bold text-lg">¡Espero que te sean de ayuda!</p>
             </div>
         </div>
     )

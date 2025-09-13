@@ -69,6 +69,12 @@ a {
   text-decoration-line: underline;
 }
 
+#welcomes:hover > h3 {
+  text-decoration: #000000;
+  text-underline-offset: 4px;
+  text-decoration-line: underline;
+}
+
 @media (min-width: 1024px) {
   #menuLink {
     display: inline;

@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 
 interface CourseSectionProps {
-    title: string;
-    children: ReactNode;
+    title: string; // Título de sección obligatorio
+    children: ReactNode; //Texto de sección obligatorio
     bgColor?: string; // Color de fondo opcional
-    titleColor?: string
+    titleColor?: string // Color de título opcional
 }
 
 export default function CourseSection({ title, children, bgColor = "bg-green-700", titleColor}: CourseSectionProps) {
