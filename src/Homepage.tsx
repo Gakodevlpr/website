@@ -8,11 +8,6 @@ export default function Homepage() {
   // Estado para controlar la visibilidad de las noticias
   const [isVisibility, setVisibility] = useState(false)
   
-  // Array de noticias (fácil de modificar para agregar/quitar contenido)
-  
-  // Función que determina si hay muchas noticias (más de 4)
-  const hasManyNews = newsItems.length > 4;
-  
   return (
     <>
       <Helmet>
