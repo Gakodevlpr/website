@@ -1,4 +1,4 @@
-import { NewTabLink } from "../../components/General/NewTabLink";
+import NewTabLink from "../../components/General/NewTabLink";
 import { NewSection } from "../../components/Recursos/NewSection";
 import TitlePage from "../../components/TitlePage";
 
