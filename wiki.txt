@@ -1,0 +1,178 @@
+
+## 1. Información General
+
+### 1.1 Descripción del Proyecto
+GakoDevlpr es una plataforma educativa web desarrollada con React y TypeScript que ofrece cursos de programación, recursos y materiales de aprendizaje. La plataforma está diseñada para ayudar a los usuarios a aprender diferentes lenguajes de programación y conceptos de desarrollo web, así como sirve para facilitar recursos para programadores.
+
+
+### 1.2 Tecnologías Utilizadas
+- Frontend : React 19.1.0, TypeScript
+- Routing : React Router 7.6.3
+- Estilos : TailwindCSS 4.1.11
+- Construcción : Vite 7.0.0
+- Análisis de Rendimiento : @vercel/speed-insights
+- Otras Librerías : react-syntax-highlighter, react-helmet-async
+
+## 2. Arquitectura del Proyecto
+
+### 2.1 Estructura de Directorios
+```
+├── public/            # Archivos estáticos públicos
+├── src/               # Código fuente principal
+│   ├── assets/        # Imágenes, SVGs y otros recursos
+│   ├── components/    # Componentes reutilizables
+│   │   ├── Courses/   # Componentes específicos para cursos
+│   │   ├── General/   # Componentes generales
+│   │   └── Recursos/  # Componentes para la sección de recursos
+│   ├── context/       # Contextos de React
+│   ├── hooks/         # Hooks personalizados
+│   ├── Pages/         # Componentes de páginas principales
+│   │   ├── Courses/   # Páginas de cursos
+│   │   └── Recursos/  # Páginas de recursos
+│   └── routes/        # Configuración de rutas
+├── .gitignore         # Archivos ignorados por git
+├── package.json       # Dependencias y scripts
+└── vite.config.ts     # Configuración de Vite
+```
+
+### 2.2 Flujo de la Aplicación
+La aplicación utiliza React Router para gestionar la navegación entre diferentes páginas. El punto de entrada es main.tsx , que renderiza el componente raíz y configura el enrutador. Las rutas están definidas en routes.tsx y utilizan un diseño de layout común definido en Layout.tsx .
+
+
+## 3. Componentes Principales
+
+### 3.1 Layout
+El componente Layout.tsx proporciona la estructura común para todas las páginas, incluyendo elementos como encabezado, navegación y pie de página.
+
+
+### 3.2 Homepage
+El componente Homepage.tsx es la página principal que muestra el logo de la aplicación, un menú de navegación y una sección de noticias que se puede expandir/contraer. Incluye:
+
+- Logo principal
+- Menú de navegación con enlaces a Bienvenida, Recursos y Cursos
+- Sección de noticias con animación de despliegue
+
+### 3.3 Cursos
+El componente Courses.tsx gestiona la visualización de los cursos disponibles y la navegación dentro de cada curso. Características principales:
+
+- Muestra tarjetas para cada curso disponible (Python, Programación 101, HTML...)
+- Proporciona navegación dentro de cada curso con secciones numeradas
+- Utiliza configuraciones específicas para cada curso
+
+### 3.4 Recursos
+El componente Recursos.tsx ofrece una colección de recursos útiles para el desarrollo, organizados en categorías como:
+
+- Cheatsheets para diferentes lenguajes
+- Recursos de CSS
+- Materiales de aprendizaje
+- Enlaces a sitios web externos útiles
+
+## 4. Estructura de Rutas
+
+### 4.1 Rutas Principales
+- / : Página de inicio
+- /bienvenida : Página de bienvenida
+- /recursos : Recursos de programación
+- /cursos : Listado de cursos disponibles
+
+### 4.2 Rutas de Cursos
+- /cursos/python : Curso de Python
+  - /cursos/python/python_1 : Sección 1 del curso de Python
+  - /cursos/python/python_2 : Sección 2 del curso de Python
+  - /cursos/python/python_n : Sección n del curso de Python
+  - /cursos/python/python_end : Página final del curso de Python
+
+- /cursos/basicprogramming : Curso de Programación 101
+  - /cursos/basicprogramming/basicprogramming_1 : Sección 1 del curso
+  - /cursos/basicprogramming/basicprogramming_2 : Sección 2 del curso
+  - /cursos/basicprogramming/basicprogramming_n : Sección n del curso
+  - /cursos/basicprogramming/basicprogramming_end : Página final del curso
+
+- /cursos/html : Curso de HTML
+  - /cursos/html/html_1 : Sección 1 del curso de HTML
+  - /cursos/html/html_2 : Sección 2 del curso de HTML
+  - /cursos/html/html_n : Sección n del curso de HTML
+  - /cursos/html/html_end : Página final del curso de HTML
+
+## 5. Componentes Reutilizables
+
+### 5.1 Componentes de Cursos
+- ExportCourse : Tarjeta para mostrar un curso disponible
+- CourseNavigation : Navegación dentro de un curso específico
+- CourseSection : Sección de contenido dentro de un curso
+
+### 5.2 Componentes Generales
+- Menu : Menú de navegación principal
+- Titles : Componente para títulos de sección
+- NewTabLink : Enlace que se abre en una nueva pestaña
+
+### 5.3 Componentes de Recursos
+- NewSection : Sección para mostrar recursos específicos
+
+## 6. Guía de Desarrollo
+
+### 6.1 Instalación y Configuración
+
+```
+# Instalar dependencias
+pnpm install
+
+# Iniciar servidor de desarrollo
+pnpm run dev
+
+# Construir para producción
+pnpm run build
+
+# Vista previa de la versión de 
+producción
+pnpm run preview
+```
+
+### 6.2 Estructura de un Curso
+Para crear un nuevo curso, se debe seguir esta estructura:
+
+I.
+   Crear archivos del curso en src/Pages/Courses/[NombreCurso]/
+II.
+   Añadir las rutas en routes.tsx
+III.
+   Actualizar la configuración en Courses.tsx
+IV.
+   Añadir la tarjeta del curso en la lista principal
+
+### 6.3 Añadir Recursos
+Para añadir nuevos recursos:
+
+I.
+   Editar src/Pages/Recursos/Recursos.tsx
+II.
+   Utilizar el componente NewSection para crear una nueva categoría
+III.
+   Añadir enlaces utilizando el componente NewTabLink
+
+## 7. Rendimiento y Optimización
+
+### 7.1 Análisis de Rendimiento
+El proyecto utiliza @vercel/speed-insights para monitorear el rendimiento de la aplicación.
+
+
+### 7.2 Optimización de Imágenes
+Las imágenes y SVGs se almacenan en src/assets/ y se importan directamente en los componentes.
+
+
+## 8. Despliegue
+
+### 8.1 Construcción para Producción
+```
+pnpm run build
+```
+Esto generará una versión optimizada de la aplicación en el directorio dist/ .
+
+
+### 8.2 Vista Previa Local
+```
+pnpm run preview
+```
+Permite ver la versión de producción localmente antes de desplegarla.
+
+Esta wiki proporciona una visión general del proyecto GakoDevlpr. Para más detalles sobre componentes específicos, consulta los archivos de código fuente correspondientes.

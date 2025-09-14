@@ -2,17 +2,13 @@ import { Helmet } from 'react-helmet-async';
 import Logo from './assets/logo.svg?react';
 import Menu from './components/General/Menu';
 import { useState } from 'react';
+import { newsItems } from './News';
 
 export default function Homepage() {
   // Estado para controlar la visibilidad de las noticias
   const [isVisibility, setVisibility] = useState(false)
   
   // Array de noticias (fácil de modificar para agregar/quitar contenido)
-  const newsItems = [
-    "Nuevo contenido en curso Python / 13-09-2025",
-    "Nuevo contenido en curso Programación 101 / 13-09-2025",
-    "Arreglo de logo / 13-09-2025"
-  ];
   
   // Función que determina si hay muchas noticias (más de 4)
   const hasManyNews = newsItems.length > 4;
@@ -40,9 +36,7 @@ export default function Homepage() {
           id="1" 
           className={`flex flex-col items-center transition-all duration-700 ease-in-out ${
             isVisibility 
-              ? hasManyNews 
-                ? 'justify-start pt-8 flex-1' // Muchas noticias: se desplaza hacia arriba
-                : 'justify-center flex-1 py-8' // Pocas noticias: se mantiene centrado
+              ? 'justify-start pb-8 flex-1' // Muchas noticias: se desplaza hacia arriba
               : 'justify-center flex-1' // Estado inicial: centrado en la pantalla
           }`}
         >
@@ -64,7 +58,7 @@ export default function Homepage() {
           - Siempre centrado horizontalmente
           - Se posiciona después del contenido principal
         */}
-        <div className='flex flex-col items-center pb-8'>
+        <div className='flex flex-col items-center pb-18'>
           {/* 
             Botón SVG para mostrar/ocultar noticias
             - Cursor pointer para indicar que es clickeable
@@ -100,9 +94,7 @@ export default function Homepage() {
           <div 
             className={`transition-all duration-700 ease-out overflow-hidden ${
               isVisibility 
-                ? hasManyNews 
-                  ? 'max-h-96 md:max-h-80 opacity-100 transform translate-y-0' // Muchas noticias: altura grande
-                  : 'max-h-48 md:max-h-40 opacity-100 transform translate-y-0' // Pocas noticias: altura pequeña
+                ? 'opacity-100 transform translate-y-0' // Pocas noticias: altura pequeña
                 : 'max-h-0 opacity-0 transform translate-y-4'
             }`}
           >
