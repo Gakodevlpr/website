@@ -104,6 +104,11 @@ a {
   }
 }
 
+/*Estilos para la tabla*/
+table, th, td {
+  border: 1px solid #ffffff;
+}
+
 /* Estilos básicos para botones */
 button {
   padding: 0.4em 1.5em;

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async"
+import NewTabLink from "../components/General/NewTabLink"
 
 export default function Home(){
     return(
@@ -21,20 +22,18 @@ export default function Home(){
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                        <a
-                            href="https://github.com/Gakodevlpr" 
-                            target="_blank"
+                        <NewTabLink
+                            href="https://github.com/Gakodevlpr"
                             className="px-8 py-3 bg-white text-black rounded-lg transition-colors"
                         >
                             Ver proyectos
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/gabriel-cerezuela-mazar%C3%ADo-196759223/" 
-                            target="_blank"
+                        </NewTabLink>
+                        <NewTabLink
+                            href="https://www.linkedin.com/in/gabriel-cerezuela-mazar%C3%ADo-196759223/"
                             className="px-8 py-3 bg-white text-black rounded-lg transition-colors"
                         >
                             LinkedIn
-                        </a>
+                        </NewTabLink>
                     </div>
                 </section>
 
