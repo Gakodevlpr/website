@@ -23,6 +23,10 @@ export default function Recursos() {
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><NewTabLink className="text-black md:p-2" href="https://quickref.me/">QuickRef</NewTabLink></td>
+                                    <td>Multiples lenguajes y programas</td>
+                                </tr>
+                                <tr>
                                     <td><NewTabLink className="text-black md:p-2" href="https://htmlcheatsheet.com/">HTML Cheat Sheet</NewTabLink></td>
                                     <td>HTML</td>
                                 </tr>

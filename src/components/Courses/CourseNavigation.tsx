@@ -17,8 +17,6 @@ export default function CourseNavigation({ courseConfig }: CourseNavigationProps
   // Usa el hook personalizado para obtener todas las funciones y estados de navegación
   const { 
     isNestedRoute,        // Si estamos en una ruta anidada (subsección)
-    isEndPage,           // Si estamos en la página de fin del curso
-    goToNextSection,     // Función para ir a la siguiente sección
     goToPreviousSection, // Función para ir a la sección anterior
     goBackToCourses      // Función para volver a la lista de cursos
   } = useCourseNavigation(courseConfig);
@@ -50,7 +48,19 @@ export default function CourseNavigation({ courseConfig }: CourseNavigationProps
       >
         ↑ Volver a cursos
       </button>
-      
+    </div>
+  );
+}
+
+export function CourseNavigationNext({ courseConfig }: CourseNavigationProps) {
+  // Usa el hook personalizado para obtener todas las funciones y estados de navegación
+  const { 
+    isEndPage,           // Si estamos en la página de fin del curso
+    goToNextSection,     // Función para ir a la siguiente sección
+  } = useCourseNavigation(courseConfig);
+
+  return (
+    <div className="flex justify-end mb-6 gap-3">
       {/* 
         Botón "Siguiente" 
         Solo aparece si NO estamos en la página de fin del curso

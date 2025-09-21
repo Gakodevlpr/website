@@ -1,9 +1,10 @@
 // Importaciones de imágenes y componentes necesarios
-import pythonImage from '../assets/python.png';
+// import pythonImage from '../assets/python.png';
 import promptin from '../assets/promptin.svg';
-import htmlImage from '../assets/html_logo_course.png';
+// import htmlImage from '../assets/html_logo_course.png';
 import ExportCourse from '../components/Courses/ExportCourse';
 import CourseNavigation from '../components/Courses/CourseNavigation';
+import { CourseNavigationNext } from '../components/Courses/CourseNavigation';
 import { useOutlet } from 'react-router-dom';
 
 /**
@@ -21,7 +22,7 @@ export default function Courses() {
         // Configuración para el curso de Programación 101
         programacion101: {
             coursePath: 'basicprogramming/basicprogramming',  // Ruta base del curso
-            sections: [],                              // Secciones disponibles (1 y 2)
+            sections: [0, 1],                              // Secciones disponibles (0 y 1)
             endPath: 'basicprogramming/basicprogramming_end'    // Ruta de la página de fin
         },
         // Configuración para el curso de Python
@@ -33,7 +34,7 @@ export default function Courses() {
         // Configuración para el curso de HTML
         html: {
             coursePath: 'html/html',                        // Ruta base del curso
-            sections: [1, 2],                              // Secciones disponibles (1 y 2)
+            sections: [1, 2, 3],                              // Secciones disponibles (1 y 2)
             endPath: 'html/html_end'                        // Ruta de la página de fin
         }
     };
@@ -46,18 +47,18 @@ export default function Courses() {
             return courseConfigs.programacion101;
         } 
         // Si la ruta contiene 'python', usa la configuración de Python
-        else if (window.location.pathname.includes('python')) {
-            return courseConfigs.python;
-        }
+        // else if (window.location.pathname.includes('python')) {
+        //     return courseConfigs.python;
+        // }
         // Si la ruta contiene 'html', usa la configuración de HTML
-        else if (window.location.pathname.includes('html')) {
-            return courseConfigs.html;
-        }
+        // else if (window.location.pathname.includes('html')) {
+        //     return courseConfigs.html;
+        // }
         // Por defecto, usa la configuración de Programación 101
         return courseConfigs.programacion101;
     };
     return (
-        <section id="cursos" className='flex flex-col p-8 gap-10'>
+        <section className='flex flex-col p-8 gap-10'>
             {/* 
                 Si NO hay contenido hijo (outlet) → muestra la lista principal de cursos
                 Esto ocurre cuando el usuario está en /cursos sin estar dentro de un curso específico
@@ -65,9 +66,9 @@ export default function Courses() {
             {!outlet && (
                 <div className="flex flex-wrap gap-10 justify-center">
                     {/* Tarjetas de cursos disponibles */}
-                    <ExportCourse titleCourse="Python" imagesrc={pythonImage} linkTo="python" />
                     <ExportCourse titleCourse="Programación 101" imagesrc={promptin} linkTo="basicprogramming" />
-                    <ExportCourse titleCourse="Html" imagesrc={htmlImage} linkTo="html" />
+                    {/* <ExportCourse titleCourse="Python" imagesrc={pythonImage} linkTo="python" /> */}
+                    {/* <ExportCourse titleCourse="Html" imagesrc={htmlImage} linkTo="html" /> */}
                 </div>
             )}
 
@@ -77,7 +78,7 @@ export default function Courses() {
                 Pasa la configuración del curso activo al componente de navegación
             */}
             {outlet && (
-                <CourseNavigation courseConfig={getActiveCourseConfig()} />
+                    <CourseNavigation courseConfig={getActiveCourseConfig()} />
             )}
 
             {/* 
@@ -85,6 +86,9 @@ export default function Courses() {
                 Aquí se muestra el contenido del curso específico que está activo
             */}
             {outlet}
+            {outlet && (
+                <CourseNavigationNext courseConfig={getActiveCourseConfig()} />
+            )}
         </section>
     );
 }

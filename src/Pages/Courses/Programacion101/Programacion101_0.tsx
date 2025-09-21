@@ -6,105 +6,63 @@ export default function Programacion101() {
     const bgColorNew = "bg-yellow-500"
     const titleColorNew = "text-black"
     const outlet = useOutlet();
-    
+
     return (
-        <section className="flex flex-col items-center">
+        <div>
             {/* Si NO hay contenido hijo → muestra el contenido principal */}
             {!outlet && (
-                <>
-                    <Titles title="Básicos de programación" text="¡Bienvenido/a! Aquí aprenderás los conceptos fundamentales que necesitas para empezar a programar, sin importar el lenguaje que elijas en el futuro. Estos son los pilares que te ayudarán a entender cualquier tecnología."/>
+                <section className="flex flex-col items-center">
+                    <Titles title="Básicos de programación" text="¡Bienvenide! Aquí aprenderás los conceptos fundamentales que necesitas para empezar a programar, sin importar el lenguaje que elijas en el futuro. <br/>Estos son los pilares que te ayudarán a entender cualquier tecnología." />
                     <div className="flex flex-col gap-8 md:w-8/10 max-w-5xl pt-10">
-                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="1. ¿Qué es la programación?">
+                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="¿Qué es esto de programar?">
                             <p>
-                                La programación es el proceso de escribir instrucciones (código) que una computadora puede entender y ejecutar. Es como darle órdenes a una máquina para que realice tareas específicas.
+                                ¡Bienvenide al mundo del código! Programar es básicamente como ser un mago digital: escribes unas palabras especiales (código) y ¡pum! 🪄 haces que el ordenador haga cosas por ti. Es como darle instrucciones a un ayudante muy obediente... pero que necesita que le digas exactamente lo que quieres.
                             </p>
                         </CourseSection>
-                        
-                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="2. Variables y Tipos de Datos">
+
+                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="¿Y esto para qué me va a servir? 🤔">
                             <p>
-                                <strong>Variables</strong> son espacios donde guardamos información. Por ejemplo, tu nombre, tu edad o el resultado de una suma. Los <strong>tipos de datos</strong> más comunes son:
+                                ¡Para un montón de cosas! Imagina poder crear tus propios juegos, hacer que tu PC trabaje por ti, o incluso desarrollar la próxima app viral. La programación es como tener un superpoder en el mundo digital. 
                             </p>
-                            <ul className="list-disc list-inside ml-4 mt-2">
-                                <li>
-                                    <b>Números</b> (enteros, decimales)
-                                </li>
-                                <li>
-                                    <b>Cadenas de texto</b> (palabras, frases)
-                                </li>
-                                <li>
-                                    <b>Booleanos</b> (verdadero o falso)
-                                </li>
-                            </ul>
-                        </CourseSection>
-                        
-                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="3. Operadores">
                             <p>
-                                Los operadores permiten realizar operaciones con variables y valores. Ejemplos:
+                                Por ejemplo, ¿te ha pasado alguna vez tener que hacer una tarea súper repetitiva en el ordenador? Digamos... renombrar 200 fotos de tus vacaciones una por una 😫. Con programación, podrías hacer un pequeño programa que lo haga por ti en segundos mientras tú te tomas un café ☕.
                             </p>
-                            <ul className="grid grid-cols-2 list-disc list-inside ml-4 mt-2">
-                                <li>
-                                    <b>+</b> Suma
-                                </li>
-                                <li>
-                                    <b>-</b> Resta
-                                </li>
-                                <li>
-                                    <b>*</b> Multiplicación
-                                </li>
-                                <li>
-                                    <b>/</b> División
-                                </li>
-                                <li>
-                                    <b>==</b> Igualdad
-                                </li>
-                                <li>
-                                    <b>&gt;</b> Mayor que
-                                </li>
-                                <li>
-                                    <b>&lt;</b> Menor que
-                                </li>
-                            </ul>
-                        </CourseSection>
-                        
-                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="4. Estructuras de Control">
-                            <p>
-                                Permiten tomar decisiones o repetir acciones:
-                            </p>
-                            <ul className="list-disc list-inside ml-4 mt-2">
-                                <li>
-                                    <b>Condicionales</b> (<code>if</code>, <code>else</code>): ejecutan código solo si se cumple una condición.
-                                </li>
-                                <li>
-                                    <b>Bucles</b> (<code>for</code>, <code>while</code>): repiten una acción varias veces.
-                                </li>
-                            </ul>
-                        </CourseSection>
-                        
-                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="5. Funciones">
-                            <p>
-                                Una función es un bloque de código que realiza una tarea específica. Sirven para reutilizar código y organizar mejor los programas.
+                            <img src="https://api.memegen.link/images/ugandanknuck/Humano listo/Humano aprende a ser Mr. Robot.png" className="md:w-1/2 mx-auto pt-8"/>
+                            <p className="font-light text-xs text-center text-gray-400">
+                                ¡Mira! Este meme lo hemos creado usando programación. Es un ejemplo súper simple de cómo podemos hacer que internet trabaje para nosotros. 
+                                Solo necesitamos una URL especial y ¡voilà! 🎩
                             </p>
                         </CourseSection>
-                        
-                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="6. Comentarios">
+
+                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="¿Necesito ser un genio de las mates? 🧮">
                             <p>
-                                Los comentarios son notas en el código que ayudan a explicar qué hace cada parte. No afectan la ejecución del programa.
+                                ¡Para nada! Lo más importante es tener curiosidad y ganas de resolver problemas. Es como aprender un nuevo idioma: al principio parece complicado, pero con práctica todo empieza a tener sentido. Si sabes seguir una receta de cocina, ¡ya tienes la lógica básica para programar! 
                             </p>
                         </CourseSection>
+
+                        <CourseSection bgColor={bgColorNew} titleColor={titleColorNew} title="¿Por dónde empezamos? 🚀">
+                            <p>
+                                Vamos a empezar por lo básico y poco a poco iremos construyendo cosas más chulas. Es como cuando aprendes a andar en bici: primero con rueditas, y antes de que te des cuenta, ¡estarás haciendo trucos! 
+                            </p>
+                            <p>
+                                En este curso vamos a aprender jugando y experimentando. Nada de rollos teóricos aburridos - aquí todo es práctico y divertido. 🎮
+                            </p>
+                        </CourseSection>
+
                     </div>
                     <div className="mt-10 text-center">
                         <p className="text-lg font-semibold">
-                            ¿Listo/a para empezar a programar? 🚀
+                            ¿Liste para empezar a programar? 🚀
                         </p>
                         <p className="text-gray-400 mt-2">
-                            Explora los ejemplos y ejercicios prácticos en la siguiente sección.
+                            Sigue aprendiendo en la siguiente sección.
                         </p>
                     </div>
-                </>
+                </section>
             )}
-            
+
             {/* Renderiza el contenido hijo */}
             {outlet}
-        </section>
+        </div>
     );
 }

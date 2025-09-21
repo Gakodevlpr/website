@@ -1,8 +1,8 @@
 const Titles = ({ title, text, className }: { title: string, text: string, className?: string }) => {
 
     return (
-        <div className={`flex flex-col md:flex-row items-center justify-center gap-4 mb-10 md:max-w-4/5 max-w-full  ${className ?? ""} ${title.includes("Sección") ? "justify-center" : ""}`}>
-            <h2 id='Title' className="text-center font-bold text-2xl">{title}</h2>
+        <div className={`flex flex-col md:flex-row items-center justify-center gap-4 mb-6 md:max-w-7/12 ${className ?? ""} ${title.includes("Sección") ? "justify-center" : ""}`}>
+            <h2 id='Title' className="text-center font-bold text-2xl" dangerouslySetInnerHTML={{ __html: title }}></h2>
             <span className="hidden md:block h-16 border-r border-white"></span>
             <span className="block md:hidden w-full border-b border-white"></span>
             <div>

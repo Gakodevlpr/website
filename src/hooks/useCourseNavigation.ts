@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 
 // Interfaz que define la configuración de un curso
-interface CourseConfig {
+export interface CourseConfig {
   coursePath: string;        // Ruta base del curso (ej: "basicprograming/basicprogramin")
   sections: number[];        // Array con los números de secciones disponibles (ej: [1, 2])
   endPath: string;          // Ruta de la página de fin (ej: "basicprograming/basicprogramin_end")
@@ -40,8 +40,11 @@ export function useCourseNavigation(config: CourseConfig) {
       ? `${config.coursePath}_${nextSection}`  // CORREGIDO: usa guión bajo en lugar de barra
       : config.endPath;
     
-    // Función que ejecuta la navegación
-    const go = () => navigate(targetPath);
+    // Función que ejecuta la navegación y resetea el scroll
+    const go = () => {
+      navigate(targetPath);
+      window.scrollTo(0, 0); // Reset posición del scroll para ir arriba
+    };
     
     // Si el navegador soporta View Transitions, las usa para una transición suave
     // Si no, navega normalmente
@@ -54,7 +57,16 @@ export function useCourseNavigation(config: CourseConfig) {
 
   // Navega a la sección anterior usando el historial del navegador
   const goToPreviousSection = () => {
-    const go = () => navigate(-1);  // -1 significa "ir a la página anterior"
+    const go = () => {
+      navigate(-1);  // -1 significa "ir a la página anterior"
+      // Use setTimeout to ensure scroll happens after navigation
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
+    };
     
     // Aplica View Transition si está disponible
     if (document.startViewTransition) {
@@ -66,7 +78,10 @@ export function useCourseNavigation(config: CourseConfig) {
 
   // Navega de vuelta a la lista principal de cursos
   const goBackToCourses = () => {
-    const go = () => navigate("/cursos");  // Va directamente a la ruta de cursos
+    const go = () => {
+      navigate("/cursos");  // Va directamente a la ruta de cursos
+      window.scrollTo(0, 0); // Reset posición del scroll para ir arriba
+    };
     
     // Aplica View Transition si está disponible
     if (document.startViewTransition) {
