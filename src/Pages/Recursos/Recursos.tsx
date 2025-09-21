@@ -18,8 +18,10 @@ export default function Recursos() {
                     contenido={
                         <table className="w-full border-2 text-center">
                             <thead className="border">
-                                <th>Enlace</th>
-                                <th>Lenguaje</th>
+                                <tr>
+                                    <th>Enlace</th>
+                                    <th>Lenguaje</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>
@@ -121,7 +123,20 @@ export default function Recursos() {
                     id="HTML"
                     title="HTML"
                     content="Recursos para sacarle todo el partido a HTML."
-                    contenido={"En proceso..."}
+                    contenido={
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <NewTabLink className="text-black md:p-2" href="https://developer.mozilla.org/es/docs/Web/HTML">
+                                        MDN Web Docs
+                                    </NewTabLink>
+                                </td>
+                                <td>
+                                    Documentación oficial de HTML.
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
                 />
             </div>
         </div>

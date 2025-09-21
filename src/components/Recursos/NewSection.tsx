@@ -13,7 +13,7 @@ export function NewSection(
     { title, content, contenido, id, personaliced, className}: NewSectionProps) {
     const [isVisible, setIsVisible] = useState(false)
     return (
-        <div id={id} className={`new-section p-5 rounded-md flex flex-col gap-2 ${isVisible ? null : "max-h-fit"} ${className}`}>
+        <div id={id} className={`new-section p-5 min-w-2/5 rounded-md flex flex-col gap-2 ${isVisible ? null : "max-h-fit"} ${className}`}>
             <h3 className={`font-bold text-xl cursor-pointer flex justify-between items-center gap-5 ${isVisible ? "bg-black text-white rounded-2xl p-2 transition-all duration-200" : null}`} onClick={() => setIsVisible(!isVisible)}>
                 {title}
                 {isVisible && <span className="text-sm text-gray-400 font-Montserrat">Haz click en el título para cerrar la tarjeta</span>}
