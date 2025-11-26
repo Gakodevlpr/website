@@ -22,7 +22,7 @@ export default function Courses() {
         // Configuración para el curso de Programación 101
         programacion101: {
             coursePath: 'basicprogramming/basicprogramming',  // Ruta base del curso
-            sections: [0, 1],                              // Secciones disponibles (0 y 1)
+            sections: [0, 1, 2],                              // Secciones disponibles (0 y 1)
             endPath: 'basicprogramming/basicprogramming_end'    // Ruta de la página de fin
         },
         // Configuración para el curso de Python
